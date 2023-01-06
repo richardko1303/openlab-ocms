@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Note
+
+# Model Form Field configuration
+form: $/openlab/example/models/note/fields.yaml
+
+# Model Class name
+modelClass: Openlab\Example\Models\Note
+
+# Default redirect location
+defaultRedirect: openlab/example/notes
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: openlab/example/notes/update/:id
+    redirectClose: openlab/example/notes
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: openlab/example/notes
+    redirectClose: openlab/example/notes
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

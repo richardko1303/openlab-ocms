@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    arrival:
+        label: Cas prichodu
+    name:
+        label: Meno
+    surname:
+        label: Priezvisko

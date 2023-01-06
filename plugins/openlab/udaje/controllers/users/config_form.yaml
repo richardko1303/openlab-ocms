@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: User
+
+# Model Form Field configuration
+form: $/openlab/udaje/models/user/fields.yaml
+
+# Model Class name
+modelClass: Openlab\Udaje\Models\User
+
+# Default redirect location
+defaultRedirect: openlab/udaje/users
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: openlab/udaje/users/update/:id
+    redirectClose: openlab/udaje/users
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: openlab/udaje/users
+    redirectClose: openlab/udaje/users
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

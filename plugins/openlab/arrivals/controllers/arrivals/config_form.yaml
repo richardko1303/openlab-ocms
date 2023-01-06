@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Arrival
+
+# Model Form Field configuration
+form: $/openlab/arrivals/models/arrival/fields.yaml
+
+# Model Class name
+modelClass: Openlab\Arrivals\Models\Arrival
+
+# Default redirect location
+defaultRedirect: openlab/arrivals/arrivals
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: openlab/arrivals/arrivals/update/:id
+    redirectClose: openlab/arrivals/arrivals
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: openlab/arrivals/arrivals
+    redirectClose: openlab/arrivals/arrivals
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
