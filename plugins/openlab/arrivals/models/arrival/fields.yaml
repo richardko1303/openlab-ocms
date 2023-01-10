@@ -11,4 +11,4 @@ fields:
     surname:
         label: Priezvisko
     arrival:
-        label: Cas prichodu
+        label: Prichod

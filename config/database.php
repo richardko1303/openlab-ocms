@@ -1,4 +1,5 @@
 <?php
+use Carbon\Traits\Timestamp;
 
 return [
 
@@ -145,4 +146,11 @@ return [
 
     'useConfigForTesting' => false,
 
+    'dbal' => [
+        'types' => [
+            'timestamp' => TimestampType::class
+        ],
+    ]
+
 ];
+

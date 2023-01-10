@@ -7,7 +7,7 @@ columns:
         label: ID
         searchable: true
     arrival:
-        label: Cas prichodu
+        label: Prichod
     name:
         label: Meno
     surname:

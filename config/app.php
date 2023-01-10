@@ -192,7 +192,11 @@ return [
 
     'aliases' => array_merge(include(base_path('modules/system/aliases.php')), [
 
-        // 'Str' => 'Illuminate\Support\Str', // Example
+         //'Str' => 'Illuminate\Support\Str', // Example
+
+         'Str' => October\Rain\Support\Facades\Str::class,
+
+         'Arr' => Illuminate\Support\Arr::class
 
     ]),
 

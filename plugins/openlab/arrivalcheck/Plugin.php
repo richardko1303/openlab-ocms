@@ -3,6 +3,7 @@
 use Backend;
 use SebastianBergmann\Environment\Console;
 use System\Classes\PluginBase;
+use Openlab\Arrivals\Models\Arrival;
 use Event;
 use Log;
 
@@ -43,49 +44,22 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        Event::listen('arrival.created', function ($arrival) {
+
+        Arrival::extend(function ($model) {
+            $model->bindEvent('model.afterCreate', function () use ($model) {
+                Log::info("{$model->name} was created!");
 
             $hour = date('H');
 
             if($hour < 8) {
-                Log::info($arrival->name . $arrival->surname . ' => On Time');
+                Log::info($model->name . $model->surname . ' => On Time');
             } else if($hour >= 8) {
-                Log::info($arrival->name . $arrival->surname . ' => Late');
+                Log::info($model->name . $model->surname . ' => Late');
             } else {
-                Log::info($arrival->name . $arrival->surname . ' => On Time');
+                Log::info($model->name . $model->surname . ' => On Time');
             }
+            });
         });
-    }
-
-    /**
-     * Registers any front-end components implemented in this plugin.
-     *
-     * @return array
-     */
-    public function registerComponents()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'Openlab\Arrivalcheck\Components\MyComponent' => 'myComponent',
-        ];
-    }
-
-    /**
-     * Registers any back-end permissions used by this plugin.
-     *
-     * @return array
-     */
-    public function registerPermissions()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'openlab.arrivalcheck.some_permission' => [
-                'tab' => 'arrivalcheck',
-                'label' => 'Some permission'
-            ],
-        ];
     }
 
     /**
