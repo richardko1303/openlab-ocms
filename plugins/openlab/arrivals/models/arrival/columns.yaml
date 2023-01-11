@@ -6,6 +6,8 @@ columns:
     id:
         label: ID
         searchable: true
+    user_id:
+        label: User ID
     arrival:
         label: Prichod
     name:

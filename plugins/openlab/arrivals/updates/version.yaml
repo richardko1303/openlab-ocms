@@ -8,3 +8,9 @@
 1.0.4:
   - e
   - update_arrivals_table.php
+1.0.5:
+  - musel som dropnut par tables takze znova
+  - create_arrivals_table.php
+1.0.6:
+  - create column user_id
+  - update_arrivals_table.php

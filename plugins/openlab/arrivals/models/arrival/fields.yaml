@@ -6,6 +6,8 @@ fields:
     id:
         label: ID
         disabled: true
+    user_id:
+        label: User ID
     name:
         label: Meno
     surname:

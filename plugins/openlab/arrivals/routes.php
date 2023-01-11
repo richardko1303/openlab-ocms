@@ -2,6 +2,7 @@
 
 use Openlab\Arrivals\Models\Arrival;
 use System\ReportWidgets\Status;
+use LibUser\Userapi\Models\User;
 //  use Autor\Plugin\Models\Model
 
 Route::group(['prefix' => 'api'], function () {
@@ -38,5 +39,11 @@ Route::group(['prefix' => 'api'], function () {
 
             return $arrival;
         });
+
+        // Route::middleware(['auth'])->group(function () {
+
+            
+            
+        // });
     });
 });

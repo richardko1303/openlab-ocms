@@ -10,7 +10,7 @@ class CreateArrivalsTable extends Migration
     {
         Schema::table('openlab_arrivals_arrivals', function (Blueprint $table) {
             //$table->timestamp('arrival')->nullable()->change();
-            $table->timestamp('arrival')->nullable();
+            $table->integer('user_id')->nullable();
         });
     }
 

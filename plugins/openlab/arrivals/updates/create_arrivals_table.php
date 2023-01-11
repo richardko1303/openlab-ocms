@@ -13,7 +13,7 @@ class CreateArrivalsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('surname');
-            $table->string('arrival');
+            $table->timestamp('arrival')->nullable();
             $table->timestamps();
         });
     }
