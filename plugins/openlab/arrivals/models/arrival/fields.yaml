@@ -3,9 +3,6 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
     user_id:
         label: User ID
     name:
@@ -14,3 +11,4 @@ fields:
         label: Priezvisko
     arrival:
         label: Prichod
+        type: datepicker

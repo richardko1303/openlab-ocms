@@ -2,6 +2,7 @@
 
 use Openlab\Arrivals\Models\Arrival;
 use System\ReportWidgets\Status;
+use Rainlab\User\Facades\Auth;
 use LibUser\Userapi\Models\User;
 //  use Autor\Plugin\Models\Model
 

@@ -11,6 +11,7 @@ class CreateArrivalsTable extends Migration
         Schema::create('openlab_arrivals_arrivals', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->integer('user_id')->nullable()->index();
             $table->string('name');
             $table->string('surname');
             $table->timestamp('arrival')->nullable();
