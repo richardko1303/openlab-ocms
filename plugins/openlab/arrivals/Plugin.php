@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Openlab\Arrivals\Classes\Extend\UserExtend;
 use RainLab\User\Models\User;
 use Event;
 use Openlab\Arrivals\Models\Arrival;
@@ -43,21 +44,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        User::extend(function($model) {
-            $model->hasMany['arrivals'] = ['Openlab\Arrivals\Models\Arrival', 'key' => 'user_id', 'order' => 'id'];
-        });
-
-        Event::listen('eloquent.created: RainLab\User\Models\User', function($user) {
-            // $name = post('name');
-            // $surname = post('surname');
-        
-            $arrival = new Arrival;
-            $arrival->user_id = $user->id;
-            $arrival->name = $user->name;
-            $arrival->surname = $user->surname;
-            $arrival->arrival = date("Y-m-d H:i:s");
-            $arrival->save();
-        });
+        UserExtend::UserExtend();
     }
 
     /**

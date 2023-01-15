@@ -60,17 +60,7 @@ class Arrival extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
-    public $hasOneThrough = [];
-    public $hasManyThrough = [];
     public $belongsTo = [
-        'user' => ['Rainlab\User\Models\User', 'key' => 'id'],
+        'user' => ['Rainlab\User\Models\User'],
     ];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
 }
