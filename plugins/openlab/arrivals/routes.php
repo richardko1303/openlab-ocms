@@ -19,6 +19,8 @@ Route::group(['prefix' => 'api'], function () {
         Route::middleware(['auth'])->group(function () {
 
             Route::post('arrivals/create', [ArrivalController::class, 'create']);
+
+            Route::get('myarrivals', [ArrivalController::class, 'myarrivals']);
             
         });
     });

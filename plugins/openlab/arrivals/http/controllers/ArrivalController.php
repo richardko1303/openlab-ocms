@@ -28,11 +28,16 @@ class ArrivalController extends Controller {
     public function create() {
         $arrival = new Arrival;
         $arrival->user_id = auth()->user()->id;
-        $arrival->name = auth()->user()->surname;
+        $arrival->name = auth()->user()->name;
         $arrival->surname = auth()->user()->surname;
         $arrival->arrival = date("Y-m-d H:i:s");
         $arrival->save();
 
         return ArrivalResource::make($arrival);
+    }
+
+    public function myarrivals() {
+        Event::fire('arrivals.requested');
+        return ArrivalResource::collection(Arrival::where('user_id', auth()->user()->id)->get());
     }
 }
